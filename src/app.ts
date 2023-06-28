@@ -4,17 +4,17 @@ export default defineOperationApp({
   id: "file-import-operation",
   name: "File Import Operation",
   icon: "add_photo_alternate",
-  description: "This is my custom operation!",
+  description: "Operation to import files from a remote URL.",
   overview: ({ text }) => [
     {
-      label: "Text",
+      label: "File Import",
       text: text,
     },
   ],
   options: [
     {
-      field: "text",
-      name: "Text",
+      field: "importUrl",
+      name: "Import URL",
       type: "string",
       meta: {
         width: "full",
