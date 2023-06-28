@@ -1,0 +1,35 @@
+{
+  "name": "directus-extension-file-import-operation",
+  "description": "A Directus extension that adds a custom operation to import files from a remote URL.",
+  "icon": "extension",
+  "version": "0.0.1",
+  "keywords": [
+    "directus",
+    "directus-extension",
+    "directus-custom-operation"
+  ],
+  "type": "module",
+  "directus:extension": {
+    "type": "operation",
+    "path": {
+      "app": "dist/app.js",
+      "api": "dist/api.js"
+    },
+    "source": {
+      "app": "src/app.ts",
+      "api": "src/api.ts"
+    },
+    "host": "^10.1.5"
+  },
+  "scripts": {
+    "build": "directus-extension build",
+    "dev": "directus-extension build -w --no-minify",
+    "link": "directus-extension link"
+  },
+  "devDependencies": {
+    "@directus/extensions-sdk": "10.1.5",
+    "@types/node": "^20.3.2",
+    "typescript": "^5.1.5",
+    "vue": "^3.3.4"
+  }
+}
