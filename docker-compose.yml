@@ -1,0 +1,23 @@
+version: "3"
+services:
+  directus:
+    # image: directus/directus:9.22
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8055:8055
+    volumes:
+      - ./database:/directus/database
+      - ./uploads:/directus/uploads
+      - ./dist:/directus/extensions/operations/file-import
+    environment:
+      KEY: "local"
+      SECRET: "local"
+      ADMIN_EMAIL: "admin@example.com"
+      ADMIN_PASSWORD: "d1r3ctu5"
+      WEBSOCKETS_ENABLED: true
+      PUBLIC_URL: "http://localhost:8055"
+      DB_CLIENT: "sqlite3"
+      DB_FILENAME: "./database/database.sqlite"
+      EXTENSIONS_AUTO_RELOAD: true
