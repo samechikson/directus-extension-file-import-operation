@@ -16,7 +16,17 @@ export default defineOperationApi<Options>({
 
     const { services } = context;
 
-    const file = await services.files.import(importUrl);
+    let file;
+    try {
+      const fileService = new services.FilesService({
+        knex: context.database,
+        schema: context.getSchema(),
+      });
+
+      file = await fileService.importOne(importUrl);
+    } catch (e) {
+      console.log("Error:", e);
+    }
 
     return file;
   },
