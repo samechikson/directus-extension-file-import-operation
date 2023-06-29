@@ -15,10 +15,13 @@ npm install directus-flow-import-images
 In your Flow, add a new action and select the "Import images from external URLs" action. You can then configure the action with the import URL.
 
 1. Create a new action in your Flow
-   <img src="./images/file-import-operation-config-1.png" width="500">
+
+<img src="https://github.com/samechikson/directus-extension-file-import-operation/blob/main/images/file-import-operation-config-1.png?raw=true" width="500">
 
 2. Select the "File Import" action and configure the action URL
-   <img src="./images/file-import-operation-config-2.png" width="500">
+
+<img src="https://github.com/samechikson/directus-extension-file-import-operation/blob/main/images/file-import-operation-config-2.png?raw=true" width="500">
 
 3. The action will download the image and store it in the Directus storage, and return the file ID to the next operation
-   <img src="./images/file-import-operation-in-flow.png" width="500">
+
+<img src="https://github.com/samechikson/directus-extension-file-import-operation/blob/main/images/file-import-operation-in-flow.png?raw=true" width="500">
