@@ -6,7 +6,7 @@ type Options = {
 };
 
 export default defineOperationApi<Options>({
-  id: "file-import-operation",
+  id: "file-import",
   handler: async (options, context: OperationContext) => {
     const importUrl = options.importUrl;
 

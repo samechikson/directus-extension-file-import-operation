@@ -1,10 +1,10 @@
 import { defineOperationApp } from "@directus/extensions-sdk";
 
 export default defineOperationApp({
-  id: "file-import-operation",
-  name: "File Import Operation",
+  id: "file-import",
+  name: "File Import",
   icon: "add_photo_alternate",
-  description: "Operation to import files from a remote URL.",
+  description: "Imports a file from a remote URL.",
   overview: ({ text }) => [
     {
       label: "File Import",
