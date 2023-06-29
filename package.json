@@ -2,7 +2,7 @@
   "name": "directus-extension-file-import-operation",
   "description": "A Directus extension that adds a custom operation to import files from a remote URL.",
   "icon": "extension",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "keywords": [
     "directus",
     "directus-extension",
