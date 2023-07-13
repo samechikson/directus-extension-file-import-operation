@@ -28,6 +28,10 @@ export default defineOperationApi<Options>({
       console.log("Error:", e);
     }
 
+    if (!file) {
+      throw new Error("File could not be imported.");
+    }
+
     return file;
   },
 });
