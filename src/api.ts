@@ -11,7 +11,9 @@ export default defineOperationApi<Options>({
     const importUrl = options.importUrl;
 
     if (!importUrl) {
-      throw new Error("Import URL is required.");
+      throw JSON.stringify({
+        error: "Import URL is required.",
+      });
     }
 
     const { services } = context;
@@ -25,11 +27,16 @@ export default defineOperationApi<Options>({
 
       file = await fileService.importOne(importUrl);
     } catch (e) {
-      console.log("Error:", e);
+      throw JSON.stringify({
+        error: "Error importing file",
+        errorDetails: e,
+      });
     }
 
     if (!file) {
-      throw new Error("File could not be imported.");
+      throw JSON.stringify({
+        error: "File not found",
+      });
     }
 
     return file;
