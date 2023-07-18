@@ -1,16 +1,17 @@
 version: "3"
 services:
   directus:
-    # image: directus/directus:9.22
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: directus/directus:9.22
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile
     ports:
       - 8055:8055
     volumes:
       - ./database:/directus/database
       - ./uploads:/directus/uploads
       - ./dist:/directus/extensions/operations/file-import
+      - ./extensions/migrations:/directus/extensions/migrations
     environment:
       KEY: "local"
       SECRET: "local"
@@ -21,3 +22,5 @@ services:
       DB_CLIENT: "sqlite3"
       DB_FILENAME: "./database/database.sqlite"
       EXTENSIONS_AUTO_RELOAD: true
+      FLOWS_ENV_ALLOW_LIST: "PUBLIC_URL,CLEARBIT_API_KEY"
+      CLEARBIT_API_KEY: ""
