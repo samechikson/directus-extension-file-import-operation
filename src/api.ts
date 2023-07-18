@@ -18,18 +18,26 @@ export default defineOperationApi<Options>({
 
     const { services } = context;
 
-    let file;
+    let fileService: any;
     try {
-      const fileService = new services.FilesService({
+      fileService = new services.FilesService({
         knex: context.database,
         schema: context.getSchema(),
       });
+    } catch (error: any) {
+      throw JSON.stringify({
+        error: "Error creating file service",
+        errorDetails: error.message ? error.message : error,
+      });
+    }
 
+    let file;
+    try {
       file = await fileService.importOne(importUrl);
-    } catch (e) {
+    } catch (error: any) {
       throw JSON.stringify({
         error: "Error importing file",
-        errorDetails: e,
+        errorDetails: error.message ? error.message : error,
       });
     }
 
