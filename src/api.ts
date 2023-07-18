@@ -22,7 +22,7 @@ export default defineOperationApi<Options>({
     try {
       fileService = new services.FilesService({
         knex: context.database,
-        schema: context.getSchema(),
+        schema: await context.getSchema(),
       });
     } catch (error: any) {
       throw JSON.stringify({
