@@ -26,7 +26,8 @@
     "dev:docker": "docker compose up",
     "dev": "directus-extension build -w --no-minify",
     "link": "directus-extension link",
-    "prepack": "npm run build"
+    "prepack": "npm run build",
+    "release": "release-it"
   },
   "devDependencies": {
     "@directus/extensions-sdk": "^9.26.0",
@@ -44,5 +45,13 @@
   },
   "engines": {
     "node": ">=18.0.0"
+  },
+  "release-it": {
+    "github": {
+      "release": true
+    },
+    "npm": {
+      "publish": true
+    }
   }
 }
