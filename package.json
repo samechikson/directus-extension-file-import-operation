@@ -12,8 +12,8 @@
   "directus:extension": {
     "type": "operation",
     "path": {
-      "app": "dist/app.js",
-      "api": "dist/api.js"
+      "app": "dist/app.cjs",
+      "api": "dist/api.cjs"
     },
     "source": {
       "app": "src/app.ts",
@@ -40,5 +40,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/samechikson/directus-extension-file-import-operation"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
