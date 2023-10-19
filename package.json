@@ -19,7 +19,7 @@
       "app": "src/app.ts",
       "api": "src/api.ts"
     },
-    "host": "^9.0.0"
+    "host": "10.6.3"
   },
   "scripts": {
     "build": "directus-extension build",
